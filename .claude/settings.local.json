@@ -10,7 +10,8 @@
       "Bash(findstr:*)",
       "Bash(ipconfig:*)",
       "Bash(git --version:*)",
-      "Bash(git config:*)"
+      "Bash(git config:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []
