@@ -1,0 +1,199 @@
+{
+  "nav": {
+    "home": "Home",
+    "guides": "Guides",
+    "calculator": "Calculator",
+    "community": "Community",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out"
+  },
+  "home": {
+    "hero": {
+      "title": "Import Your Dream Car to Korea",
+      "subtitle": "Everything you need to research, calculate, and plan your overseas car purchase. From budgeting to customs clearance.",
+      "ctaPrimary": "Read Import Guides",
+      "ctaSecondary": "Try Cost Calculator"
+    },
+    "features": {
+      "guides": {
+        "title": "Step-by-Step Guides",
+        "description": "Learn the complete import process from experts. From finding cars to getting Korean plates.",
+        "cta": "View All Guides"
+      },
+      "calculator": {
+        "title": "Import Cost Calculator",
+        "description": "Get accurate estimates for taxes, duties, shipping, and fees. Know your total cost before you buy.",
+        "cta": "Try Calculator"
+      },
+      "community": {
+        "title": "Community Discussions",
+        "description": "Connect with fellow importers. Ask questions, share experiences, get real answers.",
+        "cta": "Join Community"
+      }
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "step1": {
+        "title": "Learn",
+        "description": "Read our comprehensive guides to understand the import process"
+      },
+      "step2": {
+        "title": "Calculate",
+        "description": "Estimate your total landed cost with our calculator"
+      },
+      "step3": {
+        "title": "Connect",
+        "description": "Join our community to ask questions and share experiences"
+      }
+    },
+    "cta": {
+      "title": "Ready to Start Your Import Journey?",
+      "subtitle": "Join hundreds of car enthusiasts importing their dream vehicles to Korea",
+      "ctaPrimary": "Get Started",
+      "ctaSecondary": "Calculate Costs"
+    },
+    "featuresSection": {
+      "title": "Everything You Need to Import Successfully",
+      "subtitle": "From research to registration, we've got you covered every step of the way."
+    },
+    "howItWorksSection": {
+      "subtitle": "Three simple steps to start your import journey"
+    },
+    "whyChoose": {
+      "title": "Why Choose OCP App?",
+      "expertGuidance": {
+        "title": "Expert Guidance",
+        "description": "Comprehensive guides written by people who have successfully imported vehicles to Korea"
+      },
+      "accurateCalculations": {
+        "title": "Accurate Calculations",
+        "description": "Up-to-date tax rates and fees to help you budget accurately for your import"
+      },
+      "activeCommunity": {
+        "title": "Active Community",
+        "description": "Connect with experienced importers who can answer your questions and share tips"
+      },
+      "freeTools": {
+        "title": "Free Tools",
+        "description": "All our resources, calculators, and guides are completely free to use"
+      }
+    }
+  },
+  "calculator": {
+    "title": "Import Cost Calculator",
+    "subtitle": "Estimate your total landed cost for importing a car to Korea",
+    "form": {
+      "purchasePrice": "Purchase Price (USD)",
+      "country": "Country of Origin",
+      "year": "Vehicle Year",
+      "engineCC": "Engine Displacement (cc)",
+      "shippingMethod": "Shipping Method",
+      "calculate": "Calculate Total Cost",
+      "priceHelp": "Purchase price in USD ($1,000 - $500,000)",
+      "yearHelp": "Model year",
+      "engineHelp": "Engine size in cubic centimeters (500cc - 8000cc)",
+      "ftaPartner": "FTA partner - may qualify for reduced duty",
+      "importDuty": "Import duty",
+      "roroLabel": "RoRo (Roll-on/Roll-off)",
+      "roroDesc": "Cheaper option, car driven onto ship (exposed to elements)",
+      "containerLabel": "Container Shipping",
+      "containerDesc": "Safer option, car enclosed in container (more expensive)",
+      "calculating": "Calculating...",
+      "reset": "Reset",
+      "vehicleDetails": "Vehicle Details"
+    },
+    "results": {
+      "title": "Cost Breakdown",
+      "purchasePrice": "Purchase Price",
+      "shipping": "Shipping",
+      "insurance": "Insurance",
+      "cif": "CIF Total",
+      "duty": "Import Duty",
+      "vat": "VAT",
+      "specialTax": "Special Consumption Tax",
+      "educationTax": "Education Tax",
+      "registrationTax": "Registration Tax",
+      "portFees": "Port Fees",
+      "brokerFees": "Broker Fees",
+      "total": "Total Landed Cost",
+      "exchangeRate": "Exchange Rate",
+      "purchaseDetails": "Purchase Details",
+      "taxesAndDuties": "Taxes & Duties",
+      "otherFees": "Other Fees",
+      "readyToCalculate": "Ready to Calculate",
+      "fillDetails": "Fill in the vehicle details and click \"Calculate Total Cost\" to see the estimated import costs."
+    },
+    "disclaimer": "⚠️ Disclaimer: Estimates are approximate. Actual costs may vary based on specific circumstances, current exchange rates, vehicle condition, and changing regulations. Always consult with a licensed customs broker for accurate quotes."
+  },
+  "community": {
+    "title": "Community Forum",
+    "subtitle": "Connect with fellow importers, share experiences, and get answers to your questions",
+    "newThread": "Start New Discussion",
+    "noThreads": "No Discussions Yet",
+    "beFirst": "Be the first to start a discussion in the community!",
+    "signInToPost": "Sign in to start a discussion",
+    "replies": "replies",
+    "backToList": "Back to Community",
+    "postReply": "Post Reply",
+    "signInToReply": "Sign in to reply to this thread",
+    "readGuides": "Read Guides",
+    "tryCalculator": "Try Calculator",
+    "readGuidesFirst": "Read Guides First",
+    "discussions": "Discussion",
+    "sortedByActivity": "Sorted by recent activity",
+    "comments": "comment",
+    "guidelines": {
+      "title": "💡 Community Guidelines",
+      "rule1": "• Be respectful and helpful to fellow members",
+      "rule2": "• Search existing threads before posting",
+      "rule3": "• Share accurate information and cite sources",
+      "rule4": "• Keep discussions relevant to vehicle imports"
+    }
+  },
+  "auth": {
+    "signIn": {
+      "title": "Welcome Back",
+      "email": "Email",
+      "password": "Password",
+      "button": "Sign In",
+      "noAccount": "Don't have an account?",
+      "signUpLink": "Sign up"
+    },
+    "signUp": {
+      "title": "Create Your Account",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "button": "Create Account",
+      "hasAccount": "Already have an account?",
+      "signInLink": "Sign in"
+    }
+  },
+  "guides": {
+    "title": "Import Guides",
+    "subtitle": "Step-by-step guides to help you import vehicles to Korea with confidence",
+    "costCalculator": "Cost Calculator",
+    "backToGuides": "Back to Guides",
+    "viewAllGuides": "View All Guides",
+    "tryCalculator": "Try Calculator",
+    "updated": "Updated",
+    "needHelp": {
+      "title": "💡 Need Help?",
+      "description": "If you have questions about this guide or need clarification, visit our community forum.",
+      "askInCommunity": "Ask in Community"
+    },
+    "comingSoon": {
+      "title": "Guides Coming Soon",
+      "description": "We're currently preparing comprehensive guides to help you with vehicle imports.",
+      "tryCalculator": "Try the Cost Calculator"
+    },
+    "quickTips": {
+      "title": "💡 Quick Tips",
+      "tip1": "• Start with the cost calculator to understand expenses",
+      "tip2": "• Read guides in order for step-by-step process",
+      "tip3": "• Join the community for real experiences and advice",
+      "tip4": "• Bookmark important guides for quick reference"
+    }
+  }
+}

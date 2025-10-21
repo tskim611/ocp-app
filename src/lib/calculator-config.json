@@ -1,0 +1,124 @@
+{
+  "exchangeRates": {
+    "USD_TO_KRW": 1300,
+    "EUR_TO_KRW": 1420,
+    "GBP_TO_KRW": 1650,
+    "JPY_TO_KRW": 9.5,
+    "CAD_TO_KRW": 960,
+    "AUD_TO_KRW": 860
+  },
+  "countries": [
+    {
+      "code": "US",
+      "name": "United States",
+      "currency": "USD",
+      "shippingBase": 1200,
+      "shippingPerCc": 0.5
+    },
+    {
+      "code": "DE",
+      "name": "Germany",
+      "currency": "EUR",
+      "shippingBase": 1500,
+      "shippingPerCc": 0.6
+    },
+    {
+      "code": "GB",
+      "name": "United Kingdom",
+      "currency": "GBP",
+      "shippingBase": 1400,
+      "shippingPerCc": 0.55
+    },
+    {
+      "code": "JP",
+      "name": "Japan",
+      "currency": "JPY",
+      "shippingBase": 800,
+      "shippingPerCc": 0.3
+    },
+    {
+      "code": "CA",
+      "name": "Canada",
+      "currency": "CAD",
+      "shippingBase": 1300,
+      "shippingPerCc": 0.5
+    },
+    {
+      "code": "AU",
+      "name": "Australia",
+      "currency": "AUD",
+      "shippingBase": 1600,
+      "shippingPerCc": 0.65
+    }
+  ],
+  "taxes": {
+    "importDuty": {
+      "description": "Import Duty (관세)",
+      "rate": 0.08,
+      "note": "8% of CIF value (Cost + Insurance + Freight)"
+    },
+    "vat": {
+      "description": "Value Added Tax (부가가치세)",
+      "rate": 0.1,
+      "note": "10% of (CIF + Duty + Special Tax)"
+    },
+    "specialConsumptionTax": {
+      "description": "Special Consumption Tax (개별소비세)",
+      "brackets": [
+        {
+          "maxEngineSize": 1000,
+          "rate": 0.0,
+          "note": "Exempt for small engines"
+        },
+        {
+          "maxEngineSize": 2000,
+          "rate": 0.05,
+          "note": "5% for 1001-2000cc"
+        },
+        {
+          "maxEngineSize": 99999,
+          "rate": 0.08,
+          "note": "8% for over 2000cc"
+        }
+      ]
+    },
+    "educationTax": {
+      "description": "Education Tax (교육세)",
+      "rate": 0.3,
+      "note": "30% of Special Consumption Tax"
+    }
+  },
+  "additionalCosts": {
+    "registration": {
+      "description": "Registration Fee (등록비)",
+      "baseAmount": 50000,
+      "note": "Approximate registration and documentation"
+    },
+    "inspection": {
+      "description": "Safety Inspection (안전검사)",
+      "baseAmount": 200000,
+      "note": "Vehicle inspection and certification"
+    },
+    "modification": {
+      "description": "Modification/Compliance (정비/개조)",
+      "baseAmount": 500000,
+      "note": "Estimated modifications for Korean standards"
+    }
+  },
+  "depreciation": {
+    "description": "Vehicle depreciation by year",
+    "rates": [
+      { "year": 2024, "factor": 1.0 },
+      { "year": 2023, "factor": 0.9 },
+      { "year": 2022, "factor": 0.82 },
+      { "year": 2021, "factor": 0.75 },
+      { "year": 2020, "factor": 0.68 },
+      { "year": 2019, "factor": 0.62 },
+      { "year": 2018, "factor": 0.56 },
+      { "year": 2017, "factor": 0.51 },
+      { "year": 2016, "factor": 0.46 },
+      { "year": 2015, "factor": 0.42 }
+    ],
+    "defaultOldCarFactor": 0.35
+  }
+}

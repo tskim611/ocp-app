@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev:*)",
+      "Bash(xcopy:*)",
+      "Read(//c/Dev/ocp-app/**)",
+      "Bash(node scripts/add-sample-content.js:*)",
+      "Bash(cat:*)",
+      "Bash(netsh advfirewall firewall show rule:*)",
+      "Bash(findstr:*)",
+      "Bash(ipconfig:*)",
+      "Bash(git --version:*)",
+      "Bash(git config:*)"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "outputStyle": "Explanatory"
+}
