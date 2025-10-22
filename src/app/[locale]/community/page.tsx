@@ -37,10 +37,10 @@ export default async function Community() {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight px-4">
               {t('title')}
             </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6 px-4">
               {t('subtitle')}
             </p>
             <div className="flex flex-wrap gap-4">

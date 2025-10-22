@@ -36,10 +36,10 @@ export default async function Guides() {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="mb-12 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight px-4">
               {t('title')}
             </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6 px-4">
               {t('subtitle')}
             </p>
             <div className="flex justify-center gap-4">
@@ -67,12 +67,12 @@ export default async function Guides() {
 
           {/* Guides List */}
           {guides.length === 0 ? (
-            <div className="text-center py-16">
+            <div className="text-center py-16 px-4">
               <div className="text-6xl mb-4">📚</div>
-              <h2 className="text-2xl font-semibold mb-3">
+              <h2 className="text-xl sm:text-2xl font-semibold mb-3">
                 {t('comingSoon.title')}
               </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-6">
+              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-6">
                 {t('comingSoon.description')}
               </p>
               <Link
@@ -103,10 +103,10 @@ export default async function Guides() {
                   href={`/guides/${guide.slug}`}
                   className="block group"
                 >
-                  <article className="p-6 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg transition-all bg-white dark:bg-gray-800">
+                  <article className="p-4 sm:p-6 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg transition-all bg-white dark:bg-gray-800">
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
-                        <h2 className="text-2xl font-semibold mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                        <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                           {guide.title}
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">

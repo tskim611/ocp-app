@@ -74,11 +74,11 @@ export default function ImportCostCalculator() {
   return (
     <div className="w-full max-w-6xl mx-auto">
       {/* Header */}
-      <div className="mb-8 text-center">
-        <h1 className="text-3xl md:text-4xl font-bold mb-3 text-gray-900 dark:text-gray-100">
+      <div className="mb-8 text-center px-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-gray-900 dark:text-gray-100 leading-tight">
           Import Cost Calculator
         </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-300">
+        <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300">
           Estimate your total landed cost for importing a car to Korea
         </p>
         {!fetchingRate && (
