@@ -1,0 +1,36 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="512" height="512" rx="115" fill="#2563EB"/>
+
+  <!-- Car silhouette -->
+  <g transform="translate(90, 200)">
+    <!-- Car body -->
+    <path d="M 30 60 L 50 20 L 120 20 L 140 60 L 300 60 L 300 100 L 30 100 L 30 60 Z" fill="white"/>
+
+    <!-- Car roof -->
+    <path d="M 60 20 L 80 0 L 240 0 L 260 20 L 60 20 Z" fill="white" opacity="0.9"/>
+
+    <!-- Wheels -->
+    <circle cx="80" cy="100" r="25" fill="#1F2937"/>
+    <circle cx="80" cy="100" r="12" fill="#6B7280"/>
+    <circle cx="250" cy="100" r="25" fill="#1F2937"/>
+    <circle cx="250" cy="100" r="12" fill="#6B7280"/>
+
+    <!-- Windows -->
+    <rect x="70" y="5" width="60" height="12" rx="2" fill="#93C5FD" opacity="0.6"/>
+    <rect x="135" y="5" width="60" height="12" rx="2" fill="#93C5FD" opacity="0.6"/>
+
+    <!-- Details -->
+    <rect x="45" y="35" width="20" height="5" rx="2" fill="#93C5FD" opacity="0.7"/>
+    <rect x="125" y="35" width="20" height="5" rx="2" fill="#93C5FD" opacity="0.7"/>
+  </g>
+
+  <!-- Korean element - simplified Taegeuk circle -->
+  <circle cx="410" cy="102" r="45" fill="white" opacity="0.95"/>
+  <path d="M 410 57 A 45 45 0 0 1 410 147 A 22.5 22.5 0 0 0 410 102 A 22.5 22.5 0 0 1 410 57 Z" fill="#C9151E"/>
+  <path d="M 410 147 A 45 45 0 0 1 410 57 A 22.5 22.5 0 0 0 410 102 A 22.5 22.5 0 0 1 410 147 Z" fill="#0047A0"/>
+
+  <!-- Text OCP -->
+  <text x="256" y="420" font-family="Arial, sans-serif" font-size="80" font-weight="bold" fill="white" text-anchor="middle">OCP</text>
+  <text x="256" y="470" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle" opacity="0.9">해외차구매</text>
+</svg>
