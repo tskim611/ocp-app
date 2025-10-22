@@ -21,6 +21,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'OCP App',
   description: 'Next.js application with TypeScript, Tailwind, and Supabase',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+  },
 };
 
 const locales = ['en', 'ko'];
