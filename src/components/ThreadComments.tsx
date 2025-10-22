@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useUser } from '@/lib/auth-context';
 import { useTranslations } from 'next-intl';
 import { supabase } from '@/lib/supabase';
+import { Link } from '@/i18n/routing';
 import type { CommentWithAuthor } from '@/lib/database.types';
 
 interface ThreadCommentsProps {
@@ -181,7 +182,7 @@ export default function ThreadComments({
             {t('signInToReply')}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-            <a
+            <Link
               href="/login"
               className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors text-sm sm:text-base"
             >
@@ -199,8 +200,8 @@ export default function ThreadComments({
                 />
               </svg>
               <span>Sign In</span>
-            </a>
-            <a
+            </Link>
+            <Link
               href="/signup"
               className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 border-2 border-blue-600 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors text-sm sm:text-base"
             >
@@ -218,7 +219,7 @@ export default function ThreadComments({
                 />
               </svg>
               <span>Sign Up</span>
-            </a>
+            </Link>
           </div>
         </div>
       ) : (
