@@ -13,27 +13,29 @@ export async function createServerClient() {
 
   const cookieStore = await cookies();
 
-  return createClient(supabaseUrl, supabaseAnonKey, {
+  const cookieOptions = {
     cookies: {
       get(name: string) {
         return cookieStore.get(name)?.value;
       },
-      set(name: string, value: string, options: any) {
+      set(name: string, value: string, options: Record<string, unknown>) {
         try {
           cookieStore.set(name, value, options);
-        } catch (error) {
+        } catch {
           // Cookie setting may fail in middleware or during SSR
           // This is expected and can be safely ignored
         }
       },
-      remove(name: string, options: any) {
+      remove(name: string, options: Record<string, unknown>) {
         try {
           cookieStore.set(name, '', { ...options, maxAge: 0 });
-        } catch (error) {
+        } catch {
           // Cookie removal may fail in middleware or during SSR
           // This is expected and can be safely ignored
         }
       },
     },
-  });
+  };
+
+  return createClient(supabaseUrl, supabaseAnonKey, cookieOptions as Parameters<typeof createClient>[2]);
 }

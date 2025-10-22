@@ -29,8 +29,8 @@ export default function NotFound() {
             Guide Not Found
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-            Sorry, we couldn't find the guide you're looking for. It may have
-            been removed, renamed, or doesn't exist yet.
+            Sorry, we couldn&apos;t find the guide you&apos;re looking for. It may have
+            been removed, renamed, or doesn&apos;t exist yet.
           </p>
 
           {/* Action Buttons */}

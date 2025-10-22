@@ -1,6 +1,5 @@
 import { createServerClient } from '@/lib/supabase-server';
 import type { GuideWithAuthor } from '@/lib/database.types';
-import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 

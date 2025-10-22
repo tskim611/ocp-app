@@ -27,7 +27,7 @@ if (!supabaseUrl || !supabaseServiceKey) {
 const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
 // TODO: Replace this with your actual user ID from Supabase
-const SEED_USER_ID = 'd6d3d34e-6e20-40aa-bd9f-223b0764d79b'; // Get this from Supabase Auth > Users
+const SEED_USER_ID: string = 'd6d3d34e-6e20-40aa-bd9f-223b0764d79b'; // Get this from Supabase Auth > Users
 
 // Seed data: threads and their replies
 const seedData = [

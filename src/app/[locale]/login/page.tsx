@@ -33,9 +33,9 @@ export default function Login() {
         router.push('/');
         router.refresh();
       }
-    } catch (err: any) {
+    } catch (err) {
       console.error('Login error:', err);
-      setError(err.message || 'Failed to sign in. Please try again.');
+      setError((err as Error).message || 'Failed to sign in. Please try again.');
     } finally {
       setIsLoading(false);
     }

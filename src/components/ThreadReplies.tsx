@@ -1,7 +1,6 @@
 'use client';
 
 import { useUser } from '@/lib/auth-context';
-import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import ReplyForm from './ReplyForm';
 

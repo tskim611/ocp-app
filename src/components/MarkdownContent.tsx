@@ -75,7 +75,7 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
           li: ({ children }) => <li className="leading-relaxed">{children}</li>,
 
           // Code styling
-          code: ({ inline, className, children }: any) => {
+          code: ({ inline, className, children }: { inline?: boolean; className?: string; children?: React.ReactNode }) => {
             if (inline) {
               return (
                 <code className="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-800 text-red-600 dark:text-red-400 rounded text-sm font-mono">

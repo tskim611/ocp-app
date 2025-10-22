@@ -2,7 +2,6 @@
 
 import { useUser } from '@/lib/auth-context';
 import { useTranslations } from 'next-intl';
-import { Link } from 'next-intl';
 import NewThreadForm from './NewThreadForm';
 
 export default function CommunityAuth() {

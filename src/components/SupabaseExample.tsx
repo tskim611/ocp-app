@@ -8,7 +8,6 @@ import { useEffect, useState } from 'react';
  * This is a client component that fetches data from Supabase
  */
 export default function SupabaseExample() {
-  const [connected, setConnected] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -16,20 +15,17 @@ export default function SupabaseExample() {
     async function checkConnection() {
       try {
         // Simple health check - fetch auth session
-        const { data, error: authError } = await supabase.auth.getSession();
+        const { error: authError } = await supabase.auth.getSession();
 
         if (authError) {
           throw authError;
         }
-
-        setConnected(true);
         setError(null);
       } catch (err) {
         console.error('Supabase connection error:', err);
         setError(
           err instanceof Error ? err.message : 'Failed to connect to Supabase'
         );
-        setConnected(false);
       } finally {
         setLoading(false);
       }

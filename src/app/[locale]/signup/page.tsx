@@ -70,9 +70,9 @@ export default function SignUp() {
           setIsLoading(false);
         }
       }
-    } catch (err: any) {
+    } catch (err) {
       console.error('Sign up error:', err);
-      setError(err.message || 'Failed to create account. Please try again.');
+      setError((err as Error).message || 'Failed to create account. Please try again.');
       setIsLoading(false);
     }
   };

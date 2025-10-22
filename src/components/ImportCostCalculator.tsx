@@ -374,7 +374,7 @@ export default function ImportCostCalculator() {
               <div className="text-6xl mb-4">🚗💰</div>
               <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Ready to Calculate</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Fill in the vehicle details and click "Calculate Total Cost" to see the estimated import costs.
+                Fill in the vehicle details and click &quot;Calculate Total Cost&quot; to see the estimated import costs.
               </p>
             </div>
           )}
