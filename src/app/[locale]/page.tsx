@@ -11,10 +11,10 @@ export default function Home() {
       <section className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 py-20 md:py-32">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight whitespace-pre-line">
               {t('hero.title')}
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed whitespace-pre-line">
               {t('hero.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -37,10 +37,10 @@ export default function Home() {
       <section className="py-16 md:py-20 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-4 leading-tight px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-4 leading-tight px-4 whitespace-pre-line">
               {t('featuresSection.title')}
             </h2>
-            <p className="text-center text-gray-600 dark:text-gray-400 mb-12 text-base sm:text-lg max-w-2xl mx-auto px-4">
+            <p className="text-center text-gray-600 dark:text-gray-400 mb-12 text-base sm:text-lg max-w-2xl mx-auto px-4 whitespace-pre-line">
               {t('featuresSection.subtitle')}
             </p>
 
@@ -232,10 +232,10 @@ export default function Home() {
       <section className="py-16 md:py-20 bg-gradient-to-br from-blue-600 to-purple-600 dark:from-blue-700 dark:to-purple-700">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight px-4 whitespace-pre-line">
               {t('cta.title')}
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-blue-100 mb-10 max-w-2xl mx-auto leading-relaxed px-4">
+            <p className="text-base sm:text-lg md:text-xl text-blue-100 mb-10 max-w-2xl mx-auto leading-relaxed px-4 whitespace-pre-line">
               {t('cta.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
