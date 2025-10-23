@@ -17,6 +17,7 @@ export function GuideTimeline({ content }: GuideTimelineProps) {
   const [sections, setSections] = useState<Section[]>([]);
   const [activeSection, setActiveSection] = useState<string>('');
   const [readingProgress, setReadingProgress] = useState(0);
+  const [timelineTop, setTimelineTop] = useState(96); // Initial top position (24 * 4 = 96px)
   const observerRef = useRef<IntersectionObserver | null>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
   const activeItemRef = useRef<HTMLButtonElement>(null);
@@ -65,14 +66,41 @@ export function GuideTimeline({ content }: GuideTimelineProps) {
 
         // Start from the top and find the first section that's past the top of viewport
         let newActiveSection = sections[0].id;
+        let activeSectionElement: HTMLElement | null = null;
+
         for (let i = headings.length - 1; i >= 0; i--) {
           const heading = headings[i];
           if (heading && heading.getBoundingClientRect().top <= 120) {
             newActiveSection = sections[i].id;
+            activeSectionElement = heading;
             break;
           }
         }
         setActiveSection(newActiveSection);
+
+        // Position timeline next to the active section
+        if (activeSectionElement && timelineRef.current) {
+          const sectionRect = activeSectionElement.getBoundingClientRect();
+          const timelineHeight = timelineRef.current.offsetHeight;
+
+          // Calculate desired position: align timeline with active section
+          let desiredTop = sectionRect.top + scrollTop;
+
+          // Apply constraints to keep timeline visible and reasonable
+          const minTop = 96; // Minimum top position (same as initial)
+          const maxTop = documentHeight - timelineHeight - 100; // Leave some space at bottom
+
+          // Keep within viewport when possible
+          if (sectionRect.top < 100) {
+            // If section is near/past top of viewport, keep timeline in viewport
+            desiredTop = scrollTop + 100;
+          }
+
+          // Apply min/max constraints
+          desiredTop = Math.max(minTop, Math.min(maxTop, desiredTop));
+
+          setTimelineTop(desiredTop);
+        }
       }
     };
 
@@ -146,8 +174,11 @@ export function GuideTimeline({ content }: GuideTimelineProps) {
 
   return (
     <div className="hidden lg:block">
-      {/* Sticky Timeline Sidebar */}
-      <div className="sticky top-24 w-64 xl:w-72">
+      {/* Floating Timeline Sidebar - follows active section */}
+      <div
+        className="absolute w-64 xl:w-72 transition-all duration-500 ease-out"
+        style={{ top: `${timelineTop}px` }}
+      >
         {/* Fixed Progress Bar - stays visible */}
         <div className="mb-4 p-4 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-lg border border-blue-200 dark:border-blue-700 shadow-md">
           <div className="flex items-center justify-between mb-2">
