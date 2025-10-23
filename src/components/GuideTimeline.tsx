@@ -83,9 +83,9 @@ export function GuideTimeline({ content }: GuideTimelineProps) {
           const sectionRect = activeSectionElement.getBoundingClientRect();
           const timelineHeight = timelineRef.current.offsetHeight;
 
-          // Calculate desired position: align timeline higher than the section for better visibility
-          // Position it 150px above the section heading
-          let desiredTop = sectionRect.top + scrollTop - 150;
+          // Calculate desired position: align timeline much higher than the section for better visibility
+          // Position it 300px above the section heading for optimal viewing
+          let desiredTop = sectionRect.top + scrollTop - 300;
 
           // Apply constraints to keep timeline visible and reasonable
           const minTop = 96; // Minimum top position (same as initial)
