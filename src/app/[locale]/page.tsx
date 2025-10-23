@@ -104,7 +104,7 @@ export default function Home() {
               </div>
 
               {/* Feature 2: Cost Calculator */}
-              <div className="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-8 hover:shadow-2xl hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-300 flex flex-col h-full">
+              <div className="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-8 hover:shadow-2xl hover:border-blue-500 dark:hover:border-blue-500 hover:-translate-y-2 transition-all duration-300 flex flex-col h-full">
                 <div className="text-5xl mb-6">🧮</div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
                   {t('features.calculator.title')}
@@ -134,7 +134,7 @@ export default function Home() {
               </div>
 
               {/* Feature 3: Community Forum */}
-              <div className="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-8 hover:shadow-2xl hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-300 flex flex-col h-full">
+              <div className="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-8 hover:shadow-2xl hover:border-blue-500 dark:hover:border-blue-500 hover:-translate-y-2 transition-all duration-300 flex flex-col h-full">
                 <div className="text-5xl mb-6">💬</div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
                   {t('features.community.title')}
