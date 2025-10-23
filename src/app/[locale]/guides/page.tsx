@@ -103,7 +103,7 @@ export default async function Guides() {
                   href={`/guides/${guide.slug}`}
                   className="block group"
                 >
-                  <article className="p-4 sm:p-6 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg transition-all bg-white dark:bg-gray-800">
+                  <article className="p-4 sm:p-6 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg hover:-translate-y-2 transition-all bg-white dark:bg-gray-800">
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
                         <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
