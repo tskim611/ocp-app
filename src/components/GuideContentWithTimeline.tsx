@@ -33,7 +33,7 @@ export default function GuideContentWithTimeline({
   }, [content]);
 
   return (
-    <div className="flex gap-8">
+    <div className="flex gap-8 relative">
       {/* Main content */}
       <div className="flex-1 min-w-0">
         <div ref={contentRef}>
@@ -41,8 +41,8 @@ export default function GuideContentWithTimeline({
         </div>
       </div>
 
-      {/* Timeline sidebar (hidden on mobile/tablet) */}
-      <aside className="hidden lg:block flex-shrink-0 w-64 xl:w-72">
+      {/* Timeline sidebar (hidden on mobile/tablet) - uses absolute positioning */}
+      <aside className="hidden lg:block flex-shrink-0 w-64 xl:w-72 relative">
         <GuideTimeline content={content} />
       </aside>
     </div>
