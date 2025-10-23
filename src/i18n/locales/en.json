@@ -149,7 +149,10 @@
       "rule2": "• Search existing threads before posting",
       "rule3": "• Share accurate information and cite sources",
       "rule4": "• Keep discussions relevant to vehicle imports"
-    }
+    },
+    "backToCommunity": "Back to Community",
+    "addComment": "Add a Comment",
+    "viewAllThreads": "View All Threads"
   },
   "auth": {
     "signIn": {

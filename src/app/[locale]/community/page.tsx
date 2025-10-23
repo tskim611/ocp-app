@@ -1,5 +1,7 @@
 import { createServerClient } from '@/lib/supabase-server';
 import CommunityAuth from '@/components/CommunityAuth';
+import { ThreadCard } from '@/components/ThreadCard';
+import { StaggerContainer } from '@/components/animations/StaggerContainer';
 import type { ThreadWithDetails } from '@/lib/database.types';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
@@ -27,7 +29,12 @@ export const metadata = {
     'Join the OCP community to discuss vehicle imports, share experiences, and get advice from experienced importers.',
 };
 
-export default async function Community() {
+export default async function Community({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   const threads = await getThreads();
   const t = await getTranslations('community');
 
@@ -164,103 +171,16 @@ export default async function Community() {
               </div>
 
               {/* Threads */}
-              <div className="space-y-4">
-                {threads.map((thread) => (
-                  <Link
+              <StaggerContainer staggerDelay={100} className="space-y-4">
+                {threads.map((thread, index) => (
+                  <ThreadCard
                     key={thread.id}
-                    href={`/community/${thread.id}`}
-                    className="block group"
-                  >
-                    <article className="p-6 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg transition-all bg-white dark:bg-gray-800">
-                      <div className="flex items-start justify-between gap-4">
-                        <div className="flex-1 min-w-0">
-                          <h2 className="text-xl font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors truncate">
-                            {thread.title}
-                          </h2>
-                          <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
-                            <div className="flex items-center gap-1">
-                              <svg
-                                className="w-4 h-4"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                                />
-                              </svg>
-                              <span>{thread.author_email}</span>
-                            </div>
-                            <div className="flex items-center gap-1">
-                              <svg
-                                className="w-4 h-4"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                                />
-                              </svg>
-                              <span>
-                                {thread.comment_count} {t('comments')}
-                                {thread.comment_count !== 1 ? 's' : ''}
-                              </span>
-                            </div>
-                            <div className="flex items-center gap-1">
-                              <svg
-                                className="w-4 h-4"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                                />
-                              </svg>
-                              <time dateTime={thread.last_activity_at}>
-                                {new Date(
-                                  thread.last_activity_at
-                                ).toLocaleDateString('en-US', {
-                                  month: 'short',
-                                  day: 'numeric',
-                                  year: 'numeric',
-                                })}
-                              </time>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="flex-shrink-0">
-                          <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center group-hover:bg-blue-200 dark:group-hover:bg-blue-800 transition-colors">
-                            <svg
-                              className="w-5 h-5 text-blue-600 dark:text-blue-400"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M9 5l7 7-7 7"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </article>
-                  </Link>
+                    thread={thread}
+                    locale={locale}
+                    index={index}
+                  />
                 ))}
-              </div>
+              </StaggerContainer>
             </>
           )}
 

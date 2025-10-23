@@ -2,33 +2,56 @@
 
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
+import { FadeIn } from '@/components/animations/FadeIn';
+import { StaggerContainer } from '@/components/animations/StaggerContainer';
 
 export default function Home() {
   const t = useTranslations('home');
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 py-20 md:py-32">
-        <div className="container mx-auto px-4">
+      <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-blue-100 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900/20 py-20 md:py-32 overflow-hidden relative">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 dark:bg-blue-500/5 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/10 dark:bg-purple-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        </div>
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight whitespace-pre-line">
-              {t('hero.title')}
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed whitespace-pre-line">
-              {t('hero.subtitle')}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/guides">
-                <button className="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105">
-                  {t('hero.ctaPrimary')}
-                </button>
-              </Link>
-              <Link href="/tools/calculator">
-                <button className="w-full sm:w-auto px-8 py-4 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-blue-600 dark:text-blue-400 text-lg font-semibold rounded-lg border-2 border-blue-600 dark:border-blue-400 shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105">
-                  {t('hero.ctaSecondary')}
-                </button>
-              </Link>
-            </div>
+            <FadeIn direction="down" duration={800}>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight whitespace-pre-line">
+                {t('hero.title')}
+              </h1>
+            </FadeIn>
+            <FadeIn direction="up" delay={200} duration={800}>
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed whitespace-pre-line">
+                {t('hero.subtitle')}
+              </p>
+            </FadeIn>
+            <FadeIn delay={400} duration={600}>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/guides">
+                  <button className="group w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-lg font-semibold rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+                    <span className="flex items-center justify-center gap-2">
+                      {t('hero.ctaPrimary')}
+                      <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </span>
+                  </button>
+                </Link>
+                <Link href="/tools/calculator">
+                  <button className="group w-full sm:w-auto px-8 py-4 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-blue-600 dark:text-blue-400 text-lg font-semibold rounded-xl border-2 border-blue-600 dark:border-blue-400 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+                    <span className="flex items-center justify-center gap-2">
+                      {t('hero.ctaSecondary')}
+                      <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                    </span>
+                  </button>
+                </Link>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -37,42 +60,47 @@ export default function Home() {
       <section className="py-16 md:py-20 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-4 leading-tight px-4 whitespace-pre-line">
-              {t('featuresSection.title')}
-            </h2>
-            <p className="text-center text-gray-600 dark:text-gray-400 mb-12 text-base sm:text-lg max-w-2xl mx-auto px-4 whitespace-pre-line">
-              {t('featuresSection.subtitle')}
-            </p>
+            <FadeIn>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-4 leading-tight px-4 whitespace-pre-line">
+                {t('featuresSection.title')}
+              </h2>
+              <p className="text-center text-gray-600 dark:text-gray-400 mb-12 text-base sm:text-lg max-w-2xl mx-auto px-4 whitespace-pre-line">
+                {t('featuresSection.subtitle')}
+              </p>
+            </FadeIn>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <StaggerContainer staggerDelay={150} className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Feature 1: Import Guides */}
-              <div className="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-8 hover:shadow-2xl hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-300 flex flex-col h-full">
-                <div className="text-5xl mb-6">📚</div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
-                  {t('features.guides.title')}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-6 flex-grow leading-relaxed">
-                  {t('features.guides.description')}
-                </p>
-                <Link
-                  href="/guides"
-                  className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold group-hover:gap-3 transition-all"
-                >
-                  <span>{t('features.guides.cta')}</span>
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+              <div className="group bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 hover:shadow-2xl hover:border-blue-500 dark:hover:border-blue-500 hover:-translate-y-2 transition-all duration-300 flex flex-col h-full relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:to-purple-500/5 transition-all duration-300" />
+                <div className="relative z-10">
+                  <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300">📚</div>
+                  <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+                    {t('features.guides.title')}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400 mb-6 flex-grow leading-relaxed">
+                    {t('features.guides.description')}
+                  </p>
+                  <Link
+                    href="/guides"
+                    className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold group-hover:gap-3 transition-all"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </Link>
+                    <span>{t('features.guides.cta')}</span>
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      />
+                    </svg>
+                  </Link>
+                </div>
               </div>
 
               {/* Feature 2: Cost Calculator */}
@@ -134,7 +162,7 @@ export default function Home() {
                   </svg>
                 </Link>
               </div>
-            </div>
+            </StaggerContainer>
           </div>
         </div>
       </section>

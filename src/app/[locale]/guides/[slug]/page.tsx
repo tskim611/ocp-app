@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { Link } from '@/i18n/routing';
 import { createServerClient } from '@/lib/supabase-server';
-import MarkdownContent from '@/components/MarkdownContent';
+import GuideContentWithTimeline from '@/components/GuideContentWithTimeline';
 import type { Guide } from '@/lib/database.types';
 import { getTranslations } from 'next-intl/server';
 
@@ -140,7 +140,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
 
             {/* Content Section */}
             <div className="p-8 md:p-12">
-              <MarkdownContent content={guide.content} />
+              <GuideContentWithTimeline content={guide.content} />
             </div>
           </article>
 
