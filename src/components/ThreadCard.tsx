@@ -5,6 +5,7 @@ import { Link } from '@/i18n/routing';
 import type { ThreadWithDetails } from '@/lib/database.types';
 import { useSwipeable } from '@/hooks/useSwipeable';
 import { cn } from '@/lib/utils';
+import { triggerHaptic } from '@/lib/haptics';
 
 interface ThreadCardProps {
   thread: ThreadWithDetails;
@@ -20,13 +21,20 @@ export function ThreadCard({ thread, locale, index }: ThreadCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const swipeHandlers = useSwipeable({
-    onSwipeLeft: () => setIsExpanded(false),
-    onSwipeRight: () => setIsExpanded(true),
+    onSwipeLeft: () => {
+      setIsExpanded(false);
+      triggerHaptic('light');
+    },
+    onSwipeRight: () => {
+      setIsExpanded(true);
+      triggerHaptic('light');
+    },
   });
 
   const handleToggle = (e: React.MouseEvent) => {
     e.preventDefault();
     setIsExpanded(!isExpanded);
+    triggerHaptic('selection');
   };
 
   const formatDate = (dateString: string) => {
