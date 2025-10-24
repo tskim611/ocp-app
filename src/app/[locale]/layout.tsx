@@ -6,6 +6,8 @@ import '../globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { AuthProvider } from '@/lib/auth-context';
+import { ToastProvider } from '@/contexts/ToastContext';
+import ToastContainer from '@/components/mobile/ToastContainer';
 import { notFound } from 'next/navigation';
 
 const geistSans = Geist({
@@ -50,9 +52,12 @@ export default async function LocaleLayout({
     <div className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}>
       <NextIntlClientProvider messages={messages}>
         <AuthProvider>
-          <Header />
-          <main className="flex-grow">{children}</main>
-          <Footer />
+          <ToastProvider>
+            <Header />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+            <ToastContainer />
+          </ToastProvider>
         </AuthProvider>
       </NextIntlClientProvider>
     </div>
